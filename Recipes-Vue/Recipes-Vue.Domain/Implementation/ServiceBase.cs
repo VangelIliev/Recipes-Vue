@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Recipes_Vue.Domain.Implementation
 {
-    public abstract class RepositoryBase<T> : IServiceBase<T> where T : class, IBaseEntity
+    public abstract class ServiceBase<T> : IServiceBase<T> where T : class, IBaseEntity
     {
         private readonly RecipesDbContext _dbContext;
         private readonly ILogger _logger;
 
-        public RepositoryBase(RecipesDbContext dbContext, ILogger logger)
+        public ServiceBase(RecipesDbContext dbContext, ILogger logger)
         {
             this._dbContext = dbContext;
             this._logger = logger;
