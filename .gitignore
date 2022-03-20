@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Recipes-Vue/Recipes-Vue/bin/Debug/net5.0/Recipes-Vue.Domain.dll
+/Recipes-Vue/Recipes-Vue/bin/Debug/net5.0/Recipes-Vue.Domain.pdb
+/Recipes-Vue/Recipes-Vue.Domain/bin/Debug/net5.0
