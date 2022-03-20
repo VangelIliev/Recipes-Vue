@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes-Vue", "Recipes-Vue\Recipes-Vue.csproj", "{7B4B0BE0-BCBF-4BF1-AE9F-53E224EB3944}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes-Vue", "Recipes-Vue\Recipes-Vue.csproj", "{7B4B0BE0-BCBF-4BF1-AE9F-53E224EB3944}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{3B1234B0-DE80-4E09-AADE-E1F32E491675}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0573F9C5-ADDC-4654-95C5-13F07F7A403D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes-Vue.Database", "Recipes-Vue.Database\Recipes-Vue.Database.csproj", "{A6255FE9-54B0-43E7-9CE5-B77E07D36878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes-Vue.Database", "Recipes-Vue.Database\Recipes-Vue.Database.csproj", "{A6255FE9-54B0-43E7-9CE5-B77E07D36878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes-Vue.Domain", "Recipes-Vue.Domain\Recipes-Vue.Domain.csproj", "{CB5498D3-9893-4B90-A86C-F72DA8BC6DF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes-Vue.Domain", "Recipes-Vue.Domain\Recipes-Vue.Domain.csproj", "{CB5498D3-9893-4B90-A86C-F72DA8BC6DF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{89A088AB-5452-4C70-9313-5DB0D2427E98}"
+	ProjectSection(SolutionItems) = preProject
+		index.html = index.html
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

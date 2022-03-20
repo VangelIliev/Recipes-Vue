@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Recipes-Vue.Database\Recipes-Vue.Database.csproj" />
+    <ProjectReference Include="..\Recipes-Vue.Domain\Recipes-Vue.Domain.csproj" />
   </ItemGroup>
 
 </Project>
