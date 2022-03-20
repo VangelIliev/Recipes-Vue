@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JOtdHhlcU2h4dKhnbqRqB7HtXx2Ej+dQP8/Lz0qmBCniuEFCCOLN2O/uW5LZVAjhNgT+/J/0NWalzGd8eHbMCQ==",
+  "dgSpecHash": "HDNzJx1xOF9QV6w/W2uHevNRR1Pwp3v3IHzPdt9G0+ft2Epa4hCLFUAhm7m6KKfk3QTCq8sFAawmVp/pBDdpNg==",
   "success": true,
   "projectFilePath": "C:\\Users\\veno1\\source\\repos\\Recipes-Vue\\SoftUniProject\\Web.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.15\\microsoft.entityframeworkcore.tools.5.0.15.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
+    "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",

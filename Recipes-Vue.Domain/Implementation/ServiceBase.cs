@@ -13,12 +13,10 @@ namespace Recipes_Vue.Domain.Implementation
     public abstract class ServiceBase<T> : IServiceBase<T> where T : class, IBaseEntity
     {
         private readonly RecipesDbContext _dbContext;
-        private readonly ILogger _logger;
 
-        public ServiceBase(RecipesDbContext dbContext, ILogger logger)
+        public ServiceBase(RecipesDbContext dbContext)
         {
             this._dbContext = dbContext;
-            this._logger = logger;
         }
 
         public Guid Create(T entity)
@@ -31,7 +29,6 @@ namespace Recipes_Vue.Domain.Implementation
             }
             catch (Exception e)
             {
-                this._logger.LogError(e.Message);
                 return Guid.Empty;
             }
         }
@@ -46,7 +43,6 @@ namespace Recipes_Vue.Domain.Implementation
             }
             catch (Exception e)
             {
-                this._logger.LogError(e.Message);
                 return false;
             }
         }
@@ -60,7 +56,6 @@ namespace Recipes_Vue.Domain.Implementation
             }
             catch (Exception e)
             {
-                this._logger.LogError(e.Message);
                 return new List<T>();
             }
         }
@@ -86,7 +81,6 @@ namespace Recipes_Vue.Domain.Implementation
             }
             catch (Exception e)
             {
-                this._logger.LogError(e.Message);
                 return false;
             }
         }

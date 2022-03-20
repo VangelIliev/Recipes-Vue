@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hF6o1Ggv+EXu6+aoIa9uLHC9cHye7Qol7L2ifJhlk7umpmfkCZpaRKEWgmUwb1Gcg7FPSKF/+REc2jLP9T12Iw==",
+  "dgSpecHash": "HLFc6FjJH/VhR20/nThXTdnaOUWq2l9oX2em6tUI27U4YZz10KrslrPIxHOq03dbXuLkdsTySOQwZf2oAeWxAA==",
   "success": true,
   "projectFilePath": "C:\\Users\\veno1\\source\\repos\\Recipes-Vue\\Recipes-Vue.Database\\Recipes-Vue.Database.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.15\\microsoft.entityframeworkcore.tools.5.0.15.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
+    "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\veno1\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",

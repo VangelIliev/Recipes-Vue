@@ -12,7 +12,7 @@ namespace Recipes_Vue.Domain.Implementation
 {
     public class LikeService : ServiceBase<LikeServiceModel>, ILikeService
     {
-        public LikeService(RecipesDbContext dbContext, ILogger logger) : base(dbContext, logger)
+        public LikeService(RecipesDbContext dbContext) : base(dbContext)
         {
         }
     }

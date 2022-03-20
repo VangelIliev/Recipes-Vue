@@ -12,7 +12,7 @@ namespace Recipes_Vue.Domain.Implementation
 {
     public class CommentService : ServiceBase<CommentServiceModel>, ICommentService
     {
-        public CommentService(RecipesDbContext dbContext, ILogger logger) : base(dbContext, logger)
+        public CommentService(RecipesDbContext dbContext) : base(dbContext)
         {
         }
     }

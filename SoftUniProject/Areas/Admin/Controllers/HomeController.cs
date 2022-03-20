@@ -15,7 +15,6 @@ namespace Web.Areas
     public class HomeController : Controller
     {
         private readonly ICategoryService _categoryService;
-        private readonly ILogger<HomeController> _logger;
         //private readonly IAdminService _adminService;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
@@ -24,7 +23,6 @@ namespace Web.Areas
         private readonly IEmailSender _emailSender;
         public HomeController(
                 ICategoryService categoryService,
-                ILogger<HomeController> logger,
                 //IAdminService adminService,
                 SignInManager<IdentityUser> signInManager,
                 UserManager<IdentityUser> userManager,
@@ -33,7 +31,6 @@ namespace Web.Areas
                 IEmailSender emailSender)
         {
             _categoryService = categoryService;
-            _logger = logger;
             //this._adminService = adminService;
             _signInManager = signInManager;
             _userManager = userManager;
@@ -60,7 +57,6 @@ namespace Web.Areas
 
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
                     return RedirectToAction("All", "Recipes");
                 }
             }

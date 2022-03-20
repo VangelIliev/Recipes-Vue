@@ -45,13 +45,13 @@ namespace Web
             //SERVICES
             services.AddTransient<IAdminService, AdminService>();
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<ICommentService, CommentService>();
             services.AddTransient<ILikeService, LikeService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IRecipeService, RecipeService>();
             services.AddTransient<IRecipeDislikeService, RecipeDislikeService>();
             services.AddTransient<IRecipeProductService, RecipeProductService>();
             services.AddTransient<IImageService, ImageService>();
-            services.AddTransient<ICommentService, CommentService>();
             services.AddTransient<IEmailSender, EmailSender>(i =>
                 new EmailSender
                 (
@@ -93,7 +93,7 @@ namespace Web
                     );
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Recipe}/{action=All}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

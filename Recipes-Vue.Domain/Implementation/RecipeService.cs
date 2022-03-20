@@ -12,7 +12,7 @@ namespace Recipes_Vue.Domain.Implementation
 {
     public class RecipeService : ServiceBase<RecipeServiceModel>, IRecipeService
     {
-        public RecipeService(RecipesDbContext dbContext, ILogger logger) : base(dbContext, logger)
+        public RecipeService(RecipesDbContext dbContext) : base(dbContext)
         {
         }
     }

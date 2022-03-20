@@ -10,7 +10,7 @@ namespace Recipes_Vue.Domain.Implementation
 {
     public class ImageService : ServiceBase<ImageServiceModel>, IImageService
     {
-        public ImageService(RecipesDbContext dbContext, ILogger logger) : base(dbContext, logger)
+        public ImageService(RecipesDbContext dbContext) : base(dbContext)
         {
             
         }
