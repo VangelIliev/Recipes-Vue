@@ -21,18 +21,18 @@ namespace Recipes_Vue.Domain.Implementation
             this._logger = logger;
         }
 
-        public bool Create(T entity)
+        public Guid Create(T entity)
         {
             try
             {
                 this._dbContext.Set<T>().Add(entity);
                 this._dbContext.SaveChanges();
-                return true;
+                return entity.Id;
             }
             catch (Exception e)
             {
                 this._logger.LogError(e.Message);
-                return false;
+                return Guid.Empty;
             }
         }
 

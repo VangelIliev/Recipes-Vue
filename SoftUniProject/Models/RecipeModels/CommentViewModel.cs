@@ -1,13 +1,9 @@
-﻿using Recipes_Vue.Domain.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Recipes_Vue.Domain.Models
+namespace Web.Models.RecipeModels
 {
-    public class CommentServiceModel : IBaseEntity
+    public class CommentViewModel
     {
         public Guid Id { get; set; }
         public Guid RecipeId { get; set; }

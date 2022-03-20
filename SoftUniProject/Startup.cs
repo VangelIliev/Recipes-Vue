@@ -43,7 +43,7 @@ namespace Web
             services.AddSession();
 
             //SERVICES
-            //services.AddTransient<IAdminService, AdminService>();
+            services.AddTransient<IAdminService, AdminService>();
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<ILikeService, LikeService>();
             services.AddTransient<IProductService, ProductService>();
