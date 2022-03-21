@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Recipes_Vue.Database.Entities
 {
-    public class RecipeProduct
+    public class RecipeProduct : IBaseEntity
     {
         public Guid Id { get; set; }
         public Guid RecipeId { get; set; }

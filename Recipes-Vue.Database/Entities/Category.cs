@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Recipes_Vue.Database.Entities
 {
-    public class Category
+    public class Category : IBaseEntity
     {
         [Required]
         [Key]

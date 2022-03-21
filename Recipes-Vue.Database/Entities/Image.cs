@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Recipes_Vue.Database.Entities
 {
-    public class Image
+    public class Image : IBaseEntity
     {
         public Guid Id { get; set; }
 

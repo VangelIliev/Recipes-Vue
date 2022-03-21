@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Recipes_Vue.Database.Entities
 {
-    public class Like
+    public class Like : IBaseEntity
     {
         [Required]
         [Key]
