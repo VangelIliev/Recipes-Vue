@@ -101,7 +101,7 @@ namespace Web.Controllers
                 _recipeDislikesService.Create(dislikedRecipe);
                 return Json(new { success = true, id = id });
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return RedirectToAction("CustomError", "Errors");
             }

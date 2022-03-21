@@ -493,7 +493,7 @@ namespace Web.Controllers
                 this.TempData["Message"] = "Successfully added recipe !";
                 return RedirectToAction("All");
             }
-            catch (Exception е)
+            catch (Exception )
             {
                 return RedirectToAction("CustomError", "Errors");
             }
