@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Recipes_Vue.Database.DbContext;
 using Recipes_Vue.Database.Entities;
 using Recipes_Vue.Domain.Interfaces;
@@ -65,7 +66,7 @@ namespace Recipes_Vue.Domain.Implementation
         {
             try
             {
-                var entities = this._dbContext.Set<Product>().ToList();
+                var entities = this._dbContext.Set<Product>().AsNoTracking().ToList();
                 var products = entities.Select(e => new ProductServiceModel
                 {
                     Id = e.Id,
@@ -83,7 +84,7 @@ namespace Recipes_Vue.Domain.Implementation
 
         public ProductServiceModel Read(Guid id)
         {
-            var entity = this._dbContext.Set<Product>().FirstOrDefault(x => x.Id == id);
+            var entity = this._dbContext.Set<Product>().AsNoTracking().FirstOrDefault(x => x.Id == id);
             if (entity != null)
             {
                 return new ProductServiceModel {

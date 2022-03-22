@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Recipes_Vue.Database.DbContext;
 using Recipes_Vue.Database.Entities;
 using Recipes_Vue.Domain.Interfaces;
@@ -63,7 +64,7 @@ namespace Recipes_Vue.Domain.Implementation
         {
             try
             {
-                var entities = this._dbContext.Set<Like>().ToList();
+                var entities = this._dbContext.Set<Like>().AsNoTracking().ToList();
                 var categories = entities.Select(e => new LikeServiceModel
                 {
                     Id = e.Id,
@@ -80,7 +81,7 @@ namespace Recipes_Vue.Domain.Implementation
 
         public LikeServiceModel Read(Guid id)
         {
-            var entity = this._dbContext.Set<Like>().FirstOrDefault(x => x.Id == id);
+            var entity = this._dbContext.Set<Like>().AsNoTracking().FirstOrDefault(x => x.Id == id);
             if (entity != null)
             {
                 return new LikeServiceModel {

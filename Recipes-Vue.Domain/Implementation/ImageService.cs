@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Recipes_Vue.Database.DbContext;
 using Recipes_Vue.Database.Entities;
 using Recipes_Vue.Domain.Interfaces;
@@ -70,7 +71,7 @@ namespace Recipes_Vue.Domain.Implementation
         {
             try
             {
-                var entities = this._dbContext.Set<Image>().ToList();
+                var entities = this._dbContext.Set<Image>().AsNoTracking().ToList();
                 var categories = entities.Select(e => new ImageServiceModel
                 {
                     Id = e.Id,
@@ -104,7 +105,7 @@ namespace Recipes_Vue.Domain.Implementation
 
         public ImageServiceModel Read(Guid id)
         {
-            var entity = this._dbContext.Set<Image>().FirstOrDefault(x => x.Id == id);
+            var entity = this._dbContext.Set<Image>().AsNoTracking().FirstOrDefault(x => x.Id == id);
             if (entity != null)
             {
                 return new ImageServiceModel {
