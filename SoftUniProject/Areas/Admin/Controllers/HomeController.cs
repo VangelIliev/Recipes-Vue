@@ -57,7 +57,7 @@ namespace Web.Areas
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("All", "Recipes");
+                    return RedirectToAction("All", "Recipe");
                 }
             }
             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
@@ -85,9 +85,9 @@ namespace Web.Areas
 
                 if (result.Succeeded)
                 {
-                    await _emailSender.SendEmailAsync(model.Email, "Successfull registration", $"Hello {model.Email}, my name is Vangel and I am the owner of the website and I am glad that you registered. I wish you a pleasant time on the site");
+                    //await _emailSender.SendEmailAsync(model.Email, "Successfull registration", $"Hello {model.Email}, my name is Vangel and I am the owner of the website and I am glad that you registered. I wish you a pleasant time on the site");
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("All", "Recipes");
+                    return RedirectToAction("All", "Recipe");
                 }
                 foreach (var error in result.Errors)
                 {
@@ -103,7 +103,7 @@ namespace Web.Areas
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("All", "Recipes");
+            return RedirectToAction("All", "Recipe");
         }
         [HttpGet]
         public IActionResult CreateUser()

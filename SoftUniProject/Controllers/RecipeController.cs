@@ -172,7 +172,7 @@ namespace Web.Controllers
             var recipe = _recipeService.Read(ricipeId);
             _recipeService.Delete(recipe);
             this.TempData["Message"] = "Successfully removed recipe !";
-            return this.RedirectToAction("All", "Recipes");
+            return this.RedirectToAction("All", "Recipe");
         }
 
         [HttpGet]
@@ -435,12 +435,13 @@ namespace Web.Controllers
                 }
                 var recipeModelData = new RecipeServiceModel
                 {
-                    Id = Guid.Parse(model.Id),
+                    Id = Guid.NewGuid(),
                     Name = model.Name,
                     PreparationDescription = model.PreparationDescription,
                     TimeToPrepare = model.TimeToPrepare,
                     PortionsSize = model.PortionsSize,
-                    CategoryId = Guid.Parse(model.CategoryId)
+                    CategoryId = Guid.Parse(model.CategoryId),
+                    ApplicationUserId = userID
                 };
 
                 var recipeId = _recipeService.Create(recipeModelData);
@@ -493,7 +494,7 @@ namespace Web.Controllers
                 this.TempData["Message"] = "Successfully added recipe !";
                 return RedirectToAction("All");
             }
-            catch (Exception )
+            catch (Exception e)
             {
                 return RedirectToAction("CustomError", "Errors");
             }

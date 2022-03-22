@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Recipes_Vue.Database.DbContext;
 using Recipes_Vue.Database.Entities;
 using Recipes_Vue.Domain.Interfaces;
@@ -27,7 +28,7 @@ namespace Recipes_Vue.Domain.Implementation
                 {
                     Id = Guid.NewGuid(),
                     PortionsSize = entity.PortionsSize,
-                    ApplicationUserId = entity.ApplicationUserId,
+                    IdentityUserId = entity.ApplicationUserId,
                     CategoryId = entity.CategoryId,
                     CreatedOn = entity.CreatedOn,
                     ImageUrl = entity.ImageUrl,
@@ -38,7 +39,7 @@ namespace Recipes_Vue.Domain.Implementation
                 };
                 this._dbContext.Set<Recipe>().Add(product);
                 this._dbContext.SaveChanges();
-                return entity.Id;
+                return product.Id;
             }
             catch (Exception e)
             {
@@ -54,7 +55,7 @@ namespace Recipes_Vue.Domain.Implementation
                 {
                     Id = entity.Id,
                     PortionsSize = entity.PortionsSize,
-                    ApplicationUserId = entity.ApplicationUserId,
+                    IdentityUserId = entity.ApplicationUserId,
                     CategoryId = entity.CategoryId,
                     CreatedOn = entity.CreatedOn,
                     ImageUrl = entity.ImageUrl,
@@ -77,12 +78,12 @@ namespace Recipes_Vue.Domain.Implementation
         {
             try
             {
-                var entities = this._dbContext.Set<Recipe>().ToList();
+                var entities = this._dbContext.Set<Recipe>().AsNoTracking().ToList();
                 var products = entities.Select(e => new RecipeServiceModel
                 {
                     Id = e.Id,
                     PortionsSize = e.PortionsSize,
-                    ApplicationUserId = e.ApplicationUserId,
+                    ApplicationUserId = e.IdentityUserId,
                     CategoryId = e.CategoryId,
                     CreatedOn = e.CreatedOn,
                     ImageUrl = e.ImageUrl,
@@ -101,14 +102,14 @@ namespace Recipes_Vue.Domain.Implementation
 
         public RecipeServiceModel Read(Guid id)
         {
-            var entity = this._dbContext.Set<Recipe>().FirstOrDefault(x => x.Id == id);
+            var entity = this._dbContext.Set<Recipe>().AsNoTracking().FirstOrDefault(x => x.Id == id);
             if (entity != null)
             {
                 return new RecipeServiceModel
                 {
                     Id = entity.Id,
                     PortionsSize = entity.PortionsSize,
-                    ApplicationUserId = entity.ApplicationUserId,
+                    ApplicationUserId = entity.IdentityUserId,
                     CategoryId = entity.CategoryId,
                     CreatedOn = entity.CreatedOn,
                     ImageUrl = entity.ImageUrl,
@@ -129,7 +130,7 @@ namespace Recipes_Vue.Domain.Implementation
                 {
                     Id = entity.Id,
                     PortionsSize = entity.PortionsSize,
-                    ApplicationUserId = entity.ApplicationUserId,
+                    IdentityUserId = entity.ApplicationUserId,
                     CategoryId = entity.CategoryId,
                     CreatedOn = entity.CreatedOn,
                     ImageUrl = entity.ImageUrl,

@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Recipes-Vue.Domain\Recipes-Vue.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
+
 </Project>

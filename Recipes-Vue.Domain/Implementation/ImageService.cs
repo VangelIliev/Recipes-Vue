@@ -30,7 +30,7 @@ namespace Recipes_Vue.Domain.Implementation
                     RecipeId = entity.RecipeId,
                     FilePath = entity.FilePath,
                     ImageName = entity.ImageName,
-                    UserId = entity.UserId,
+                    IdentityUserId = entity.UserId,
                 };
                 this._dbContext.Set<Image>().Add(image);
                 this._dbContext.SaveChanges();
@@ -54,7 +54,7 @@ namespace Recipes_Vue.Domain.Implementation
                     RecipeId = entity.RecipeId,
                     FilePath = entity.FilePath,
                     ImageName = entity.ImageName,
-                    UserId = entity.UserId,
+                    IdentityUserId = entity.UserId,
                 };
                 this._dbContext.Set<Image>().Remove(image);
                 this._dbContext.SaveChanges();
@@ -79,7 +79,7 @@ namespace Recipes_Vue.Domain.Implementation
                     RecipeId = e.RecipeId,
                     FilePath = e.FilePath,
                     ImageName = e.ImageName,
-                    UserId = e.UserId,
+                    UserId = e.IdentityUserId,
                 }).ToList();
                 return categories;
             }
@@ -114,7 +114,7 @@ namespace Recipes_Vue.Domain.Implementation
                     RecipeId = entity.RecipeId,
                     FilePath = entity.FilePath,
                     ImageName = entity.ImageName,
-                    UserId = entity.UserId,
+                    UserId = entity.IdentityUserId,
                 };
             }
             return null;
@@ -132,7 +132,7 @@ namespace Recipes_Vue.Domain.Implementation
                     RecipeId = entity.RecipeId,
                     FilePath = entity.FilePath,
                     ImageName = entity.ImageName,
-                    UserId = entity.UserId,
+                    IdentityUserId = entity.UserId,
                 };
                 this._dbContext.Set<Image>().Update(image);
                 this._dbContext.SaveChanges();

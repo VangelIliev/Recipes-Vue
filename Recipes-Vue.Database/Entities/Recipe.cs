@@ -21,7 +21,7 @@ namespace Recipes_Vue.Database.Entities
         public int TimeToPrepare { get; set; }
         [Required]
         [MinLength(5)]
-        [MaxLength(100)]
+        [MaxLength(350)]
         public string PreparationDescription { get; set; }
         //User who created It
         [Required]
@@ -29,7 +29,7 @@ namespace Recipes_Vue.Database.Entities
         [Required]
         public int NumberOfComments { get; set; }
         public int TotalCalories { get; set; }
-        public string ApplicationUserId { get; set; }
+        public string IdentityUserId { get; set; }
         public IdentityUser IdentityUser { get; set; }
         public Guid CategoryId { get; set; }
         public Category Category { get; set; }
