@@ -35,7 +35,7 @@ namespace Recipes_Vue.Domain.Implementation
                 this._dbContext.SaveChanges();
                 return entity.Id;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return Guid.Empty;
             }
@@ -56,7 +56,7 @@ namespace Recipes_Vue.Domain.Implementation
                 this._dbContext.SaveChanges();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -76,7 +76,7 @@ namespace Recipes_Vue.Domain.Implementation
                 }).ToList();
                 return products;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new List<RecipeProductServiceModel>();
             }
@@ -114,7 +114,7 @@ namespace Recipes_Vue.Domain.Implementation
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

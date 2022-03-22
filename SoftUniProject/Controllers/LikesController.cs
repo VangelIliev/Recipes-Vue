@@ -60,7 +60,7 @@ namespace Web.Controllers
                 this._likeService.Create(likeModel);
                 return Json(new { success = true, id = id });
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
                 return RedirectToAction("CustomError", "Errors");

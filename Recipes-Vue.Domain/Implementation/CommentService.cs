@@ -119,7 +119,7 @@ namespace Recipes_Vue.Domain.Implementation
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

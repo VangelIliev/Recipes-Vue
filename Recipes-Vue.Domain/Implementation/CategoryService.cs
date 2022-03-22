@@ -34,7 +34,7 @@ namespace Recipes_Vue.Domain.Implementation
                 this._dbContext.SaveChanges();
                 return entity.Id;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return Guid.Empty;
             }
@@ -101,7 +101,7 @@ namespace Recipes_Vue.Domain.Implementation
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

@@ -27,14 +27,14 @@ namespace Recipes_Vue.Domain.Implementation
                 var like = new Like
                 {
                     Id = Guid.NewGuid(),
-                    ApplicationUserId = entity.ApplicationUserId,
+                    IdentityUserId = entity.ApplicationUserId,
                     RecipeId = entity.RecipeId,
                 };
                 this._dbContext.Set<Like>().Add(like);
                 this._dbContext.SaveChanges();
                 return entity.Id;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return Guid.Empty;
             }
@@ -47,14 +47,14 @@ namespace Recipes_Vue.Domain.Implementation
                 var like = new Like
                 {
                     Id = entity.Id,
-                    ApplicationUserId = entity.ApplicationUserId,
+                    IdentityUserId = entity.ApplicationUserId,
                     RecipeId = entity.RecipeId,
                 };
                 this._dbContext.Set<Like>().Remove(like);
                 this._dbContext.SaveChanges();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -68,12 +68,12 @@ namespace Recipes_Vue.Domain.Implementation
                 var categories = entities.Select(e => new LikeServiceModel
                 {
                     Id = e.Id,
-                    ApplicationUserId = e.ApplicationUserId,
+                    ApplicationUserId = e.IdentityUserId,
                     RecipeId = e.RecipeId,
                 }).ToList();
                 return categories;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new List<LikeServiceModel>();
             }
@@ -86,7 +86,7 @@ namespace Recipes_Vue.Domain.Implementation
             {
                 return new LikeServiceModel {
                     Id = entity.Id,
-                    ApplicationUserId = entity.ApplicationUserId,
+                    ApplicationUserId = entity.IdentityUserId,
                     RecipeId = entity.RecipeId,
                 };
             }
@@ -100,7 +100,7 @@ namespace Recipes_Vue.Domain.Implementation
                 var like = new Like
                 {
                     Id = entity.Id,
-                    ApplicationUserId = entity.ApplicationUserId,
+                    IdentityUserId = entity.ApplicationUserId,
                     RecipeId = entity.RecipeId,
                 };
                 this._dbContext.Set<Like>().Update(like);
@@ -108,7 +108,7 @@ namespace Recipes_Vue.Domain.Implementation
                 return true;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

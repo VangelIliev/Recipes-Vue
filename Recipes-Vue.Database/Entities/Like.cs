@@ -19,7 +19,7 @@ namespace Recipes_Vue.Database.Entities
 
         //add user
 
-        public string ApplicationUserId { get; set; }
+        public string IdentityUserId { get; set; }
 
         public IdentityUser IdentityUser { get; set; }
     }

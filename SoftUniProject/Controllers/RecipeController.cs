@@ -91,7 +91,7 @@ namespace Web.Controllers
                 }
                 return View(recipeViewModels);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
                 return RedirectToAction("CustomError", "Errors");
@@ -365,7 +365,7 @@ namespace Web.Controllers
                 this.TempData["Message"] = "Successfully updated recipe !";
                 return RedirectToAction("All", "Recipes");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return View("Update", model);
             }
@@ -494,7 +494,7 @@ namespace Web.Controllers
                 this.TempData["Message"] = "Successfully added recipe !";
                 return RedirectToAction("All");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return RedirectToAction("CustomError", "Errors");
             }
