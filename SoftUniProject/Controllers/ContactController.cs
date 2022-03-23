@@ -33,7 +33,7 @@ namespace Web.Controllers
             {
                 _emailSender.SendEmailAsync(model.Email, model.Subject, model.Message);
                 this.TempData["Message"] = "Successfully send email !";
-                return RedirectToAction("All", "Recipes");
+                return RedirectToAction("All", "Recipe");
             }
             catch (Exception)
             {
@@ -58,7 +58,7 @@ namespace Web.Controllers
                 var hostEmail = _configuration.GetValue<string>("UserName");
                 _emailSender.SendEmailAsync("recipes.vangel@gmail.com", $"This is an email from {model.Email}", model.Message);
                 this.TempData["Message"] = "Successfully send email !";
-                return RedirectToAction("All", "Recipes");
+                return RedirectToAction("All", "Recipe");
             }
             catch (Exception)
             {

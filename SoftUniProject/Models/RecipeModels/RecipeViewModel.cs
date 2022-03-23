@@ -9,6 +9,7 @@ namespace Web.Models.RecipeModels
     {
 
         public string Id { get; set; }
+        [Required]
         public List<IFormFile> Images { get; set; }
         [MaxLength(20)]
         public string Name { get; set; }

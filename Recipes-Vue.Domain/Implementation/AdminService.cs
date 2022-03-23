@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Recipes_Vue.Database.DbContext;
 using Recipes_Vue.Domain.Interfaces;
 using Recipes_Vue.Domain.Models;
 using System;
@@ -11,6 +12,12 @@ namespace Recipes_Vue.Domain.Implementation
 {
     public class AdminService : IAdminService
     {
+        protected readonly RecipesDbContext _dbContext;
+
+        public AdminService(RecipesDbContext dbContext)
+        {
+            this._dbContext = dbContext;
+        }
         public bool CreateNewRoleAsync(IdentityRole indentityRole)
         {
             throw new NotImplementedException();

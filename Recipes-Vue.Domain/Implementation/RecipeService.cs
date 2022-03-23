@@ -36,6 +36,7 @@ namespace Recipes_Vue.Domain.Implementation
                     TotalCalories = entity.TotalCalories,
                     TimeToPrepare = entity.TimeToPrepare,
                     PreparationDescription = entity.PreparationDescription,
+                    
                 };
                 this._dbContext.Set<Recipe>().Add(product);
                 this._dbContext.SaveChanges();
@@ -128,10 +129,7 @@ namespace Recipes_Vue.Domain.Implementation
             {
                 var product = new Recipe
                 {
-                    Id = entity.Id,
                     PortionsSize = entity.PortionsSize,
-                    IdentityUserId = entity.ApplicationUserId,
-                    CategoryId = entity.CategoryId,
                     CreatedOn = entity.CreatedOn,
                     ImageUrl = entity.ImageUrl,
                     Name = entity.Name,
@@ -139,7 +137,10 @@ namespace Recipes_Vue.Domain.Implementation
                     TimeToPrepare = entity.TimeToPrepare,
                     PreparationDescription = entity.PreparationDescription,
                 };
-                this._dbContext.Set<Recipe>().Update(product);
+                var recipe = this._dbContext.Recipes.FirstOrDefault(x => x.Id == entity.Id);
+                recipe.PortionsSize = entity.PortionsSize;
+                recipe.TimeToPrepare = entity.TimeToPrepare;
+                recipe.PreparationDescription = entity.PreparationDescription;
                 this._dbContext.SaveChanges();
                 return true;
 

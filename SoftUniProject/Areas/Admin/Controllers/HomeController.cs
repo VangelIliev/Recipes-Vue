@@ -85,7 +85,7 @@ namespace Web.Areas
 
                 if (result.Succeeded)
                 {
-                    //await _emailSender.SendEmailAsync(model.Email, "Successfull registration", $"Hello {model.Email}, my name is Vangel and I am the owner of the website and I am glad that you registered. I wish you a pleasant time on the site");
+                    await _emailSender.SendEmailAsync(model.Email, "Successfull registration", $"Hello {model.Email}, my name is Vangel and I am the owner of the website and I am glad that you registered. I wish you a pleasant time on the site");
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("All", "Recipe");
                 }

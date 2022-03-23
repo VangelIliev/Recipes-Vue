@@ -155,6 +155,7 @@ namespace Web.Controllers
                 NumberOfComments = recipe.NumberOfComments,
                 PortionsSize = recipe.PortionsSize,
                 CategoryId = recipe.CategoryId.ToString(),
+                TimeToPrepare = recipe.TimeToPrepare
             };
 
             var imagesPaths = _imageService.PopulateRecipeViewModelImages(recipe.Id);
@@ -255,7 +256,8 @@ namespace Web.Controllers
                 {
                     Id = Guid.Parse(model.Id),
                     PortionsSize = model.PortionsSize,
-                    PreparationDescription = model.PreparationDescription
+                    PreparationDescription = model.PreparationDescription,
+                    TimeToPrepare = model.TimeToPrepare
                 };
                 recipeModel.ApplicationUserId = recipeInDb.ApplicationUserId;
                 recipeModel.CreatedOn = recipeInDb.CreatedOn;
@@ -363,7 +365,7 @@ namespace Web.Controllers
                 }
 
                 this.TempData["Message"] = "Successfully updated recipe !";
-                return RedirectToAction("All", "Recipes");
+                return RedirectToAction("All", "Recipe");
             }
             catch (Exception)
             {
@@ -426,6 +428,7 @@ namespace Web.Controllers
                     {
                         ingredient = new ProductServiceModel
                         {
+                            Id = Guid.NewGuid(),
                             Name = inputIngredient.IngredientName,
                         };
                         var id = this._productService.Create(ingredient);

@@ -21,7 +21,7 @@ namespace Recipes_Vue.Database.Entities
         public int TimeToPrepare { get; set; }
         [Required]
         [MinLength(5)]
-        [MaxLength(350)]
+        [MaxLength(2500)]
         public string PreparationDescription { get; set; }
         //User who created It
         [Required]

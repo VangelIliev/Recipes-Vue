@@ -69,3 +69,8 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+.peopleCarouselImg img {
+    width: auto;
+    height: 225px;
+    max-height: 225px;
+}
